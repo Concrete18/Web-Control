@@ -1,83 +1,62 @@
+import { useState } from 'react'
 import './App.css'
 
 import BrowserMedia from './Components/BrowserMedia'
 import GlobalMedia from './Components/GlobalMedia'
 import BrowserControls from './Components/BrowserControls'
+import AudioControls from './Components/AudioControls'
+import PowerControls from './Components/PowerControls'
+import DebugControls from './Components/DebugControls'
+
+import SectionTitleToggle from './Components/SectionTitleToggle'
 
 function App() {
 
+  const [globalVisibility, setGlobalVisibility] = useState(true);
+  
   return (
     <>
       <h1>Web Control</h1>
-      <div className="button_container">
 
-        <BrowserMedia />
+      <div className="side-by-side">
+          <button className="sbs-button"
+            onClick={() => setGlobalVisibility(false)}
+            disabled={!globalVisibility}>
+              Hide All
+          </button>
 
-        <div className="divider"></div>
-
-        <BrowserControls />
-
-        <div className="divider"></div>
-    
-        <GlobalMedia />
-
-        <div className="divider"></div>
-
-        <div className="side-by-side">
-          <form action="/volume_down" method="post">
-            <button className="sbs-button">
-              Volume -
-            </button>
-          </form>
-
-          <form action="/volume_up" method="post">
-            <button className="sbs-button">
-              Volume +
-            </button>
-          </form>
+          <button className="sbs-button"
+            onClick={() => setGlobalVisibility(true)}
+            disabled={globalVisibility}>
+              Show All
+          </button>
         </div>
 
-        <div className="divider"></div>
+      <div className="button_container">
 
-        <form action="/audio_speakers" method="post">
-          <button  >
-            Set Audio to Speakers
-          </button>
-        </form>
+        <SectionTitleToggle title="Browser Media" globalVisibility={globalVisibility}>
+          < BrowserMedia />
+        </SectionTitleToggle>
 
-        <form action="/audio_headphones" method="post">
-          <button  >
-            Set Audio to Headphones
-          </button>
-        </form>
+        <SectionTitleToggle title="Browser Controls" globalVisibility={globalVisibility}>
+          < BrowserControls />
+        </SectionTitleToggle>
 
-        <h1>Power Controls</h1>
-  
-        <form action="/sleep" method="post">
-          <button  >
-            Sleep PC
-          </button>
-        </form>
-        
-        {/* <form action="/shutdown" method="post">
-          <button  >
-            Shutdown PC
-          </button>
-        </form> */}
+        <SectionTitleToggle title="Global Media" globalVisibility={globalVisibility}>
+          < GlobalMedia />
+        </SectionTitleToggle>
 
-        <h1>Debug</h1>
-    
-        <form action="/refocus" method="post">
-          <button  >
-            Refocus Window
-          </button>
-        </form>
+        <SectionTitleToggle title="Volume Controls" globalVisibility={globalVisibility}>
+          < AudioControls />
+        </SectionTitleToggle>
 
-        <form action="/open_log" method="post">
-          <button  >
-            Open Log
-          </button>
-        </form>
+        <SectionTitleToggle title="Power Controls" globalVisibility={globalVisibility}>
+          < PowerControls />
+        </SectionTitleToggle>
+
+        <SectionTitleToggle title="Debug Controls" globalVisibility={globalVisibility}>
+          < DebugControls />
+        </SectionTitleToggle>
           
       </div>
     </>

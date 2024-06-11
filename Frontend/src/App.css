@@ -1,14 +1,20 @@
 #root {
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
 h1 {
@@ -16,12 +22,17 @@ h1 {
   color: #3191ff;
 }
 
+h2 {
+  font-size: 2em;
+  color: #3191ff;
+}
+
 button {
-  font-size: 4em;
+  font-size: 1.6em;
   background-color: #0077ff;
   border: none;
   color: white;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -35,6 +46,10 @@ button:hover {
   color: white;
 }
 
+disabled {
+  background-color: #62abff;
+}
+
 .side-by-side {
   display: flex;
   flex-direction: row;
@@ -45,8 +60,18 @@ button:hover {
   width: 6em;
 }
 
-.divider {
-  margin: 24px;
-  height: 3.5px;
-  background-color: #aad2ff;
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+  }
+
+  button {
+    font-size: 1.4em;
+    padding: 12px;
+    width: 8em;
+  }
 }

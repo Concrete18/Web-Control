@@ -1,0 +1,42 @@
+.section-container {
+  margin-bottom: 15px;
+}
+
+.section-title {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 1.5em;
+  height: 4em;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.section-title:hover {
+  background-color: #e0e0e0;
+}
+
+.section-content {
+  padding: 10px;
+  border: px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+@media only screen and (max-width: 600px) {
+  .section-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+}
