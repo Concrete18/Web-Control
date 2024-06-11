@@ -3,20 +3,6 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from passlib.context import CryptContext
 
-# middleware
-
-
-class RedirectMiddleware(BaseHTTPMiddleware):
-    async def dispatch(self, request: Request, call_next):
-        if request.url.path != "/":
-            response = await call_next(request)
-            # Modify the response to redirect to a specific route
-            response.headers["location"] = "/"
-            response.status_code = 302  # Redirect status code
-            return response
-        return await call_next(request)
-
-
 # security
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

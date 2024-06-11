@@ -1,5 +1,4 @@
-from fastapi import APIRouter, Request, Depends
-from fastapi.templating import Jinja2Templates
+from fastapi import APIRouter, Depends
 
 import pyautogui, ctypes, os
 
@@ -9,16 +8,6 @@ from classes.custom_logger import logger
 router = APIRouter()
 
 # main routes
-
-templates = Jinja2Templates(directory="templates")
-
-
-@router.get("/")
-async def index(request: Request):
-    # logger.info("Root Accessed")
-    context = {"request": request, "data": {"name": "John", "age": 30}}
-    return templates.TemplateResponse("index.html", context)
-
 
 # @router.get("/protected")
 # async def protected_route(credentials: bool = Depends(verify_credentials)):

@@ -2,8 +2,6 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 import uvicorn, os, logging
 
-from dependencies import RedirectMiddleware
-
 from routers import basic
 
 from classes.config import Config
@@ -18,7 +16,8 @@ port = int(config.config["NETWORK"]["port"])
 app = FastAPI(docs_url=None, redoc_url=None)
 app.include_router(basic.router)
 
-# Define the filter
+
+# define the filter
 class EndpointFilter(logging.Filter):
     def filter(self, record: logging.LogRecord) -> bool:
         current_route = record.args[2]
@@ -28,14 +27,21 @@ class EndpointFilter(logging.Filter):
                 return False
         return True
 
+
 # Add filter to the logger
 logging.getLogger("uvicorn.access").addFilter(EndpointFilter())
 
 # middleware
-app.add_middleware(RedirectMiddleware)
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    "http://localhost:62821",
+    "http://localhost:5173",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost", "http://localhost:8000"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
