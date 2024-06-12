@@ -1,5 +1,3 @@
 @echo off
-cd "Frontend"
-start /B cmd /c "npm run dev"
-cd "../Backend"
-start python "main.py"
+start cmd /k "cd Frontend && npm run dev"
+start cmd /k "cd Backend2 && python main.py"

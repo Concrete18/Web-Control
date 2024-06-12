@@ -62,15 +62,15 @@ disabled {
 
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 32px;
   }
   
   h2 {
-    font-size: 1.8em;
+    font-size: 26px;
   }
 
   button {
-    font-size: 1.4em;
+    font-size: 18px;
     padding: 12px;
     width: 8em;
   }

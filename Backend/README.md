@@ -2,7 +2,7 @@
 
 Allows for control of any PC with the serving running on it while on the same network.
 
-![Console Preview](https://raw.githubusercontent.com/Concrete18/Web-Server-Control/main/Images/UI%20Preview.png)
+<!-- ![Console Preview](https://raw.githubusercontent.com/Concrete18/Web-Server-Control/main/Images/UI%20Preview.png) -->
 
 ## Configuration
 
