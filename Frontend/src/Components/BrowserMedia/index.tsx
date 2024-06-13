@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faStepBackward, faStepForward, faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
 
 function BrowserMedia() {
 
@@ -36,46 +38,50 @@ function BrowserMedia() {
     await fetch(`/api/right_arrow`, { method: "POST"});
   };
 
-  // TODO switch to icons from font awesome
-
   return (
     <>
       <div className="browser-media">
 
         <button onClick={playPause}>
-          Video Play/Pause
+          <FontAwesomeIcon icon={faPlay} /> / <FontAwesomeIcon icon={faPause} />
         </button>
 
         <div className="side-by-side">
+          
           <button className="sbs-button" onClick={prevVideo}>
-            Prev Video
+            <FontAwesomeIcon icon={faStepBackward} />
           </button>
 
           <button className="sbs-button" onClick={nextVideo}>
-            Next Video
+            <FontAwesomeIcon icon={faStepForward} />
           </button>
+
         </div>
 
         <div className="side-by-side">
-            <button className="sbs-button"onClick={prevChapter}>
-              Prev Chap
-            </button>
 
-            <button className="sbs-button"onClick={nextChapter}>
-              Next Chap
-            </button>
-        </div>
+          <button className="sbs-button"onClick={skipBack}>
+            <FontAwesomeIcon icon={faBackward} />
+          </button>
+        
+          <button className="sbs-button"onClick={skipForward}>
+            <FontAwesomeIcon icon={faForward} />
+          </button>
 
-        <div className="side-by-side">
-            <button className="sbs-button"onClick={skipBack}>
-              Skip Back
-            </button>
-          
-            <button className="sbs-button"onClick={skipForward}>
-              Skip Forward
-            </button>
         </div>
         
+        <div className="side-by-side">
+
+          <button className="sbs-button"onClick={prevChapter}>
+            Prev Chapter
+          </button>
+
+          <button className="sbs-button"onClick={nextChapter}>
+            Next Chapter
+          </button>
+
+        </div>
+
       </div>
     </>
   );

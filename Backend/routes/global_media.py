@@ -1,76 +1,48 @@
 from flask import Blueprint
 import pyautogui
 
-browser_media = Blueprint("browser_media", __name__)
+global_media = Blueprint("global_media", __name__)
 
 
-@browser_media.route("/space", methods=["POST"])
-def space():
-    print("space")
-    return "space", 200
+@global_media.route("/api/media_play_pause", methods=["POST"])
+def media_play_pause():
+    pyautogui.press("playpause")
+    return "media_play_pause", 200
 
 
-@browser_media.route("/space", methods=["POST"])
-def space():
-    pyautogui.press("space")
-    return "space", 200
+@global_media.route("/api/media_prev_track", methods=["POST"])
+def media_prev_track():
+    pyautogui.press("prevtrack")
+    return "media_prev_track", 200
 
 
-@browser_media.route("/yt_next", methods=["POST"])
-async def yt_next():
-    pyautogui.hotkey("shift", "n")
-    return "yt_next", 200
+@global_media.route("/api/media_next_track", methods=["POST"])
+def media_next_track():
+    pyautogui.press("nexttrack")
+    return "media_next_track", 200
 
 
-@browser_media.route("/yt_prev", methods=["POST"])
-def yt_prev():
-    pyautogui.hotkey("shift", "p")
-    return "yt_prev", 200
+@global_media.route("/api/volume_up", methods=["POST"])
+def volume_up():
+    incr = 10
+    pyautogui.press("volumeup", presses=int(incr / 2))  # one press increases by 2
+    return "volume_up", 200
 
 
-# @router.post("/right_arrow")
-# async def right_arrow():
-#     pyautogui.press("right")
-#     # logging
-#     msg = "Right Arrow Pressed"
-#     try:
-#         logger.info(msg)
-#     except:
-#         print("Failed to log.")
-#     return {"message": "Pressed Shift + N"}
+@global_media.route("/api/volume_down", methods=["POST"])
+def volume_down():
+    incr = 10
+    pyautogui.press("volumedown", presses=int(incr / 2))  # one press decreases by 2
+    return "volume_down", 200
 
 
-# @router.post("/left_arrow")
-# async def left_arrow():
-#     pyautogui.press("left")
-#     # logging
-#     msg = "Left Arrow Pressed"
-#     try:
-#         logger.info(msg)
-#     except:
-#         print("Failed to log.")
-#     return {msg}
+@global_media.route("/api/audio_speakers", methods=["POST"])
+def audio_speakers():
+    pyautogui.hotkey("ctrl", "win", "z")
+    return "audio_speakers", 200
 
 
-# @router.post("/next_chapter")
-# async def next_chapter():
-#     pyautogui.hotkey("ctrl", "right")
-#     # logging
-#     msg = "Next Youtube Chapter"
-#     try:
-#         logger.info(msg)
-#     except:
-#         print("Failed to log.")
-#     return {"message": msg}
-
-
-# @router.post("/prev_chapter")
-# async def prev_chapter():
-#     pyautogui.hotkey("ctrl", "left")
-#     # logging
-#     msg = "Next Youtube Chapter"
-#     try:
-#         logger.info(msg)
-#     except:
-#         print("Failed to log.")
-#     return {"message": msg}
+@global_media.route("/api/audio_headphones", methods=["POST"])
+def audio_headphones():
+    pyautogui.hotkey("ctrl", "win", "x")
+    return "audio_headphones", 200

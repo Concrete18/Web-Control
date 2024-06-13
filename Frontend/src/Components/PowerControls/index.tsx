@@ -4,19 +4,17 @@ function BrowserMedia() {
 
   return (
     <>
-      <div className="audio-controls">
+      <div className="power-controls">
 
-        <div>
-          <button  >
-            Sleep PC
-            {/* sleep */}
-          </button>
-        
-          <button  >
-            Shutdown PC
-            {/* shutdown */}
-          </button>\
-        </div>
+        <button>
+          Sleep PC
+          {/* sleep */}
+        </button>
+      
+        <button>
+          Shutdown PC
+          {/* shutdown */}
+        </button>\
           
       </div>
     </>

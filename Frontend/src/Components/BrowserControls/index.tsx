@@ -1,26 +1,40 @@
-// import * as browserMedia from "../../Actions/browserMedia"
-
 function BrowserMedia() {
+
+  const fullscreen = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur();
+    await fetch(`/api/fullscreen`, { method: "POST"});
+  };
+
+  const prevTab = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur();
+    await fetch(`/api/prev_tab`, { method: "POST"});
+  };
+
+  const nextTab = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur();
+    await fetch(`/api/next_tab`, { method: "POST"});
+  };
 
   return (
     <>
       <div className="browser-controls">
-        <button  >
+        
+        <button onClick={fullscreen}>
           Fullscreen
-          {/* fullscreen */}
         </button>
     
         <div className="side-by-side">
-          <button className="sbs-button">
+
+          <button className="sbs-button" onClick={prevTab}>
             Prev Tab
-            {/* prev_tab */}
           </button>
 
-          <button className="sbs-button">
+          <button className="sbs-button" onClick={nextTab}>
             Next Tab
-            {/* next_tab */}
           </button>
+
         </div>
+
       </div>
     </>
   );

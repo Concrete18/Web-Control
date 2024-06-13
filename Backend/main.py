@@ -5,6 +5,9 @@ import os
 from classes.config import Config
 
 from routes.browser_media import browser_media
+from routes.browser_control import browser_control
+from routes.global_media import global_media
+from routes.misc import misc
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
@@ -18,6 +21,9 @@ app = Flask(__name__)
 CORS(app)  # enable CORS for all routes
 
 app.register_blueprint(browser_media)
+app.register_blueprint(browser_control)
+app.register_blueprint(global_media)
+app.register_blueprint(misc)
 
 
 if __name__ == "__main__":
