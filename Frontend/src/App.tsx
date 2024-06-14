@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 
-import BrowserMedia from './Components/BrowserMedia'
-import GlobalMedia from './Components/GlobalMedia'
-import BrowserControls from './Components/BrowserControls'
-import Miscellaneous from './Components/Miscellaneous'
+import BrowserMedia from './Components/ActionGroups/BrowserMedia'
+import GlobalMedia from './Components/ActionGroups/GlobalMedia'
+import BrowserControls from './Components/ActionGroups/BrowserControls'
+import Miscellaneous from './Components/ActionGroups/Misc'
 
 import SectionTitleToggle from './Components/SectionTitleToggle'
+import ShowHideButtons from './Components/ShowHideAll'
 
 function App() {
 
@@ -16,19 +17,7 @@ function App() {
     <>
       <h1>Web Control</h1>
 
-      <div className="side-by-side">
-          <button className="sbs-button"
-            onClick={() => setGlobalVisibility(false)}
-            disabled={!globalVisibility}>
-              Hide All
-          </button>
-
-          <button className="sbs-button"
-            onClick={() => setGlobalVisibility(true)}
-            disabled={globalVisibility}>
-              Show All
-          </button>
-        </div>
+      <ShowHideButtons setGlobalVisibility={setGlobalVisibility} globalVisibility={globalVisibility}/>
 
       <div className="button_container">
 

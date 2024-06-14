@@ -20,7 +20,7 @@ const SectionTitleToggle = ({ title, children, globalVisibility, onToggle }: any
     <div className="section-container">
       <div className="section-title" onClick={toggleVisibility}>
         <h2>{title}</h2>
-        <span>{isVisible ? '▲' : '▼'}</span>
+        <span className='group-arrow'>{isVisible ? '▲' : '▼'}</span>
       </div>
       
       {isVisible && (

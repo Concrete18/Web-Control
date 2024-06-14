@@ -1,5 +1,5 @@
 from flask import Blueprint
-import pyautogui, os
+import pyautogui, os, subprocess
 
 global_media = Blueprint("global_media", __name__)
 
@@ -20,6 +20,12 @@ def media_prev_track():
 def media_next_track():
     pyautogui.press("nexttrack")
     return "media_next_track", 200
+
+
+@global_media.route("/api/open_browser", methods=["POST"])
+def open_browser():
+    os.system("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+    return "open_browser", 200
 
 
 @global_media.route("/api/open_spotify", methods=["POST"])

@@ -5,14 +5,7 @@ function BrowserMedia() {
 
   const playPause = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
-    console.log("Sending Global Play/Pause")
-    let response = await fetch(`/api/media_play_pause`, { method: "POST"});
-    console.log("Finished Fetch")
-    if (response.ok) {
-      console.log("Success")
-    } else {
-      console.log("Fail")
-    }
+    await fetch(`/api/media_play_pause`, { method: "POST"});
   };
 
   const prevTrack = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -24,7 +17,12 @@ function BrowserMedia() {
     e.currentTarget.blur();
     await fetch(`/api/media_next_track`, { method: "POST"});
   };
-
+  
+    const openBrowser = async (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.currentTarget.blur();
+      await fetch(`/api/open_browser`, { method: "POST"});
+    };
+  
   const openSpotify = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
     await fetch(`/api/open_spotify`, { method: "POST"});
@@ -71,6 +69,10 @@ function BrowserMedia() {
             <FontAwesomeIcon icon={faStepForward} />
           </button>
         </div>
+
+        <button onClick={openBrowser}>
+          Open Browser
+        </button>
 
         <button onClick={openSpotify}>
           Open Spotify
