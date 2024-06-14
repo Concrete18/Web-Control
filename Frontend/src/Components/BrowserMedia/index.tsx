@@ -15,7 +15,7 @@ function BrowserMedia() {
 
   const nextVideo = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
-    await fetch(`/api/prev_chapter`, { method: "POST"});
+    await fetch(`/api/yt_next`, { method: "POST"});
   };
 
   const prevChapter = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -40,46 +40,37 @@ function BrowserMedia() {
 
   return (
     <>
-      <div className="browser-media">
+      <div className="vertical-buttons">
 
         <button onClick={playPause}>
           <FontAwesomeIcon icon={faPlay} /> / <FontAwesomeIcon icon={faPause} />
         </button>
 
         <div className="side-by-side">
-          
           <button className="sbs-button" onClick={prevVideo}>
             <FontAwesomeIcon icon={faStepBackward} />
           </button>
-
           <button className="sbs-button" onClick={nextVideo}>
             <FontAwesomeIcon icon={faStepForward} />
           </button>
-
         </div>
 
         <div className="side-by-side">
-
           <button className="sbs-button"onClick={skipBack}>
             <FontAwesomeIcon icon={faBackward} />
           </button>
-        
           <button className="sbs-button"onClick={skipForward}>
             <FontAwesomeIcon icon={faForward} />
           </button>
-
         </div>
         
         <div className="side-by-side">
-
           <button className="sbs-button"onClick={prevChapter}>
             Prev Chapter
           </button>
-
           <button className="sbs-button"onClick={nextChapter}>
             Next Chapter
           </button>
-
         </div>
 
       </div>

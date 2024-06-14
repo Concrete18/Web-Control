@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExpand } from '@fortawesome/free-solid-svg-icons';
+
 function BrowserMedia() {
 
   const fullscreen = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -17,22 +20,19 @@ function BrowserMedia() {
 
   return (
     <>
-      <div className="browser-controls">
+      <div className="vertical-buttons">
         
         <button onClick={fullscreen}>
-          Fullscreen
+          <FontAwesomeIcon icon={faExpand} />
         </button>
     
         <div className="side-by-side">
-
           <button className="sbs-button" onClick={prevTab}>
             Prev Tab
           </button>
-
           <button className="sbs-button" onClick={nextTab}>
             Next Tab
           </button>
-
         </div>
 
       </div>

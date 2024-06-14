@@ -20,6 +20,16 @@ def display_main_only():
     return "display_main_only", 200
 
 
+# window control
+
+
+@misc.route("/api/minimize", methods=["POST"])
+def minimize():
+    pyautogui.hotkey("alt", "space")
+    pyautogui.press("n")
+    return "minimize", 200
+
+
 # power control
 
 

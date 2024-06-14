@@ -4,8 +4,7 @@ import './App.css'
 import BrowserMedia from './Components/BrowserMedia'
 import GlobalMedia from './Components/GlobalMedia'
 import BrowserControls from './Components/BrowserControls'
-import PowerControls from './Components/PowerControls'
-import DebugControls from './Components/DebugControls'
+import Miscellaneous from './Components/Miscellaneous'
 
 import SectionTitleToggle from './Components/SectionTitleToggle'
 
@@ -45,12 +44,8 @@ function App() {
           < GlobalMedia />
         </SectionTitleToggle>
 
-        <SectionTitleToggle title="Power Controls" globalVisibility={globalVisibility}>
-          < PowerControls />
-        </SectionTitleToggle>
-
-        <SectionTitleToggle title="Debug Controls" globalVisibility={globalVisibility}>
-          < DebugControls />
+        <SectionTitleToggle title="Miscellaneous" globalVisibility={globalVisibility}>
+          < Miscellaneous />
         </SectionTitleToggle>
           
       </div>

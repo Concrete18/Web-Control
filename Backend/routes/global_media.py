@@ -1,5 +1,5 @@
 from flask import Blueprint
-import pyautogui
+import pyautogui, os
 
 global_media = Blueprint("global_media", __name__)
 
@@ -22,6 +22,12 @@ def media_next_track():
     return "media_next_track", 200
 
 
+@global_media.route("/api/open_spotify", methods=["POST"])
+def open_spotify():
+    os.system("C:Users\Michael\AppData\Roaming\Spotify\Spotify.exe")
+    return "open_spotify", 200
+
+
 @global_media.route("/api/volume_up", methods=["POST"])
 def volume_up():
     incr = 10
@@ -34,6 +40,12 @@ def volume_down():
     incr = 10
     pyautogui.press("volumedown", presses=int(incr / 2))  # one press decreases by 2
     return "volume_down", 200
+
+
+@global_media.route("/api/volume_mute", methods=["POST"])
+def volume_mute():
+    pyautogui.press("volumemute")
+    return "volume_mute", 200
 
 
 @global_media.route("/api/audio_speakers", methods=["POST"])
