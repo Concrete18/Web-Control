@@ -1,5 +1,7 @@
 # Web Control
 
+![Phone View Preview](https://raw.githubusercontent.com/Concrete18/Web-Control/main/images/Phone_Preview.png)
+
 ## Goal
 
 I created this to replace an previous FastAPI only version of this and to practice React and Flask.
