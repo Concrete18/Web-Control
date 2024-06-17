@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 
-import BrowserMedia from './Components/ActionGroups/BrowserMedia'
-import GlobalMedia from './Components/ActionGroups/GlobalMedia'
 import BrowserControls from './Components/ActionGroups/BrowserControls'
+import GlobalControls from './Components/ActionGroups/GlobalControls'
 import Miscellaneous from './Components/ActionGroups/Misc'
 
 import SectionTitleToggle from './Components/SectionTitleToggle'
@@ -11,7 +10,7 @@ import ShowHideButtons from './Components/ShowHideAll'
 
 function App() {
 
-  const [globalVisibility, setGlobalVisibility] = useState(true);
+  const [globalVisibility, setGlobalVisibility] = useState(false);
   
   return (
     <>
@@ -21,20 +20,16 @@ function App() {
 
       <div className="button_container">
 
-        <SectionTitleToggle title="Browser Media" globalVisibility={globalVisibility}>
-          < BrowserMedia />
-        </SectionTitleToggle>
-
         <SectionTitleToggle title="Browser Controls" globalVisibility={globalVisibility}>
-          < BrowserControls />
+          <BrowserControls/>
         </SectionTitleToggle>
 
-        <SectionTitleToggle title="Global Media" globalVisibility={globalVisibility}>
-          < GlobalMedia />
+        <SectionTitleToggle title="Global Controls" globalVisibility={globalVisibility}>
+          <GlobalControls />
         </SectionTitleToggle>
 
         <SectionTitleToggle title="Miscellaneous" globalVisibility={globalVisibility}>
-          < Miscellaneous />
+          <Miscellaneous/>
         </SectionTitleToggle>
           
       </div>

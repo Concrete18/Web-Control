@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './index.css';
 
 const SectionTitleToggle = ({ title, children, globalVisibility, onToggle }: any) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(globalVisibility);
