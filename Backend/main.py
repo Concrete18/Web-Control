@@ -11,12 +11,17 @@ from routes.misc import misc
 script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
-config = Config("config.ini")
-port = int(config.config["NETWORK"]["port"])
-
 app = Flask(__name__)
 
-# TODO set to only use specific devices
+# loads config
+config = Config("config.ini")
+port = int(config.config["NETWORK"]["port"])
+music_app = config.config["PATHS"]["music"]
+browser_app = config.config["PATHS"]["browser"]
+# adds to flask config
+app.config["music_app"] = music_app
+app.config["browser_app"] = browser_app
+
 CORS(app)  # enable CORS for all routes
 
 app.register_blueprint(browser_control)

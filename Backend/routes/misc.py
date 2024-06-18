@@ -17,7 +17,7 @@ def window(action):
     return action, 200
 
 
-@misc.route("/api/window/refocus", methods=["POST"])
+@misc.route("/api/window/refocus1", methods=["POST"])
 def refocus():
     # find primary screen size
     user32 = ctypes.windll.user32

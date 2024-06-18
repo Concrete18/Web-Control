@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, current_app
 import pyautogui, os
 
 from classes.audio import SetDefaultAudio
@@ -22,9 +22,11 @@ def media_control(action):
         case "next_track":
             pyautogui.press("nexttrack")
         case "open_browser":
-            os.system("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
-        case "open_spotify":
-            os.system("C:Users\Michael\AppData\Roaming\Spotify\Spotify.exe")
+            path = current_app.config["browser_app"]
+            os.system(path)
+        case "open_music":
+            path = current_app.config["music_app"]
+            os.system(path)
         case _:
             return "invalid  parameter", 422
     return action, 200

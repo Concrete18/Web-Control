@@ -10,7 +10,7 @@ import ShowHideButtons from './Components/ShowHideAll'
 
 function App() {
 
-  const [globalVisibility, setGlobalVisibility] = useState(false);
+  const [globalVisibility, setGlobalVisibility] = useState(true);
   
   return (
     <>
