@@ -13,7 +13,7 @@ def window(action):
             pyautogui.hotkey("alt", "space")
             pyautogui.press("n")
         case _:
-            return "invalid parameter", 400
+            return "invalid parameter", 422
     return action, 200
 
 
@@ -36,7 +36,7 @@ def display(action):
     if action in valid_display_modes:
         subprocess.run(["C:\Windows\System32\DisplaySwitch.exe", f"/{str(action)}"])
         return action, 200
-    return "invalid parameter", 400
+    return "invalid parameter", 422
 
 
 # power control
@@ -50,5 +50,5 @@ def power(action):
         case "sleep":
             os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
         case _:
-            return "invalid parameter", 400
+            return "invalid parameter", 422
     return action, 200

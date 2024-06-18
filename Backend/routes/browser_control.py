@@ -22,7 +22,7 @@ def media(action):
         case "prev_chapter":
             pyautogui.hotkey("ctrl", "left")
         case _:
-            return "incorrect parameter", 400
+            return "invalid  parameter", 422
     return action, 200
 
 
@@ -36,5 +36,5 @@ def nav(action):
         case "prev_tab":
             pyautogui.hotkey("ctrl", "shift", "tab")
         case _:
-            return "incorrect parameter", 400
+            return "invalid  parameter", 422
     return action, 200

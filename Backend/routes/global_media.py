@@ -1,11 +1,19 @@
 from flask import Blueprint
 import pyautogui, os
 
+from classes.audio import SetDefaultAudio
+
 global_media = Blueprint("global_media", __name__)
+
+SetAudio = SetDefaultAudio()
+
+# volume increment
+increment = 10
+key_presses = int(increment / 2)  # one press increases by 2
 
 
 @global_media.route("/api/global/media/<action>", methods=["POST"])
-def media(action):
+def media_control(action):
     match action:
         case "play_pause":
             pyautogui.press("playpause")
@@ -18,14 +26,12 @@ def media(action):
         case "open_spotify":
             os.system("C:Users\Michael\AppData\Roaming\Spotify\Spotify.exe")
         case _:
-            return "incorrect parameter", 400
+            return "invalid  parameter", 422
     return action, 200
 
 
 @global_media.route("/api/global/audio/<action>", methods=["POST"])
-def audio(action):
-    incr = 10
-    key_presses = int(incr / 2)  # one press increases by 2
+def audio_control(action):
     match action:
         case "volume_up":
             pyautogui.press("volumeup", presses=key_presses)
@@ -34,9 +40,9 @@ def audio(action):
         case "volume_mute":
             pyautogui.press("volumemute")
         case "audio_speakers":
-            pyautogui.hotkey("ctrl", "win", "z")
+            SetAudio.to_speakers()
         case "audio_headphones":
-            pyautogui.hotkey("ctrl", "win", "x")
+            SetAudio.to_headset()
         case _:
-            return "incorrect parameter", 400
+            return "invalid  parameter", 422
     return action, 200
