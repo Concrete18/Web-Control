@@ -14,19 +14,29 @@ function Miscellaneous() {
 
   // window
 
+  const prevWindow = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur();
+    await fetch(`/api/window/prev`, { method: "POST"});
+  };
+  
+  const nextWindow = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur();
+    await fetch(`/api/window/next`, { method: "POST"});
+  };
+
+  const refocus = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur();
+    await fetch(`/api/window/refocus`, { method: "POST"});
+  };
+
   const minimize = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
     await fetch(`/api/window/minimize`, { method: "POST"});
   };
-  
-  const refocus1 = async (e: React.MouseEvent<HTMLButtonElement>) => {
+
+  const maximize = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
-    await fetch(`/api/window/refocus1`, { method: "POST"});
-  };
-  
-  const refocus2 = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/window/refocus2`, { method: "POST"});
+    await fetch(`/api/window/maximize`, { method: "POST"});
   };
 
   // display
@@ -68,15 +78,24 @@ function Miscellaneous() {
         <h3>Window</h3>
 
         <button onClick={minimize}>
-          Minimize Window
+          Minimize
         </button>
 
-        <button onClick={refocus1}>
-          Refocus Window 1
+        <button onClick={maximize}>
+          Maximize
         </button>
 
-        <button onClick={refocus2}>
-          Refocus Window 2
+        <div className="side-by-side">
+          <button className="sbs-button" onClick={prevWindow}>
+            Prev
+          </button>
+          <button className="sbs-button" onClick={nextWindow}>
+            Next
+          </button>
+        </div>
+
+        <button onClick={refocus}>
+          Refocus
         </button>
 
         <h3>Display</h3>

@@ -12,12 +12,18 @@ def window(action):
         case "minimize":
             pyautogui.hotkey("alt", "space")
             pyautogui.press("n")
+        case "maximize":
+            pyautogui.hotkey("win", "up")
+        case "next":
+            pyautogui.hotkey("alt", "esc")
+        case "prev":
+            pyautogui.hotkey("alt", "shift", "esc")
         case _:
             return "invalid parameter", 422
     return action, 200
 
 
-@misc.route("/api/window/refocus1", methods=["POST"])
+@misc.route("/api/window/refocus", methods=["POST"])
 def refocus():
     # find primary screen size
     user32 = ctypes.windll.user32
