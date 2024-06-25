@@ -13,11 +13,8 @@ port = 8000
 [AUTH]
 username = your_username
 password = your_password
+
+[PATHS]
+music="C:\example\Spotify.exe"
+browser="C:\example\chrome.exe"
 ```
-
-## TODO
-
-- [x] Add Volume
-- [x] Put Volume control on same line
-- [x] Switch browser tab
-- [ ] Show computer status
