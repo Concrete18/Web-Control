@@ -1,8 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
-import os
 
-from classes.config import Config
+from utils.config import Config
 
 from routes.browser_control import browser_control
 from routes.global_media import global_media

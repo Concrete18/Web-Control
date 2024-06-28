@@ -1,5 +1,7 @@
 from flask import Blueprint
-import pyautogui, ctypes, os, subprocess
+import pyautogui, ctypes, subprocess
+
+from utils.power import Power
 
 misc = Blueprint("misc", __name__)
 
@@ -38,7 +40,7 @@ def refocus():
 
 @misc.route("/api/display/<action>", methods=["POST"])
 def display(action):
-    valid_display_modes = ["extend", "internal", "external"]
+    valid_display_modes = ["extend", "internal", "external", "duplicate"]
     if action in valid_display_modes:
         subprocess.run(["C:\Windows\System32\DisplaySwitch.exe", f"/{str(action)}"])
         return action, 200
@@ -47,14 +49,16 @@ def display(action):
 
 # power control
 
+power = Power()
+
 
 @misc.route("/api/power/<action>", methods=["POST"])
-def power(action):
+def power_control(action):
     match action:
         case "shutdown":
-            os.system("shutdown /s /t 1")
+            power.shutdown()
         case "sleep":
-            os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+            power.sleep()
         case _:
             return "invalid parameter", 422
     return action, 200

@@ -1,7 +1,7 @@
 from flask import Blueprint, current_app
 import pyautogui, os
 
-from classes.audio import SetDefaultAudio
+from utils.audio import SetDefaultAudio
 
 global_media = Blueprint("global_media", __name__)
 
