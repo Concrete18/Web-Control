@@ -1,5 +1,8 @@
+import sys
 from flask import Flask
 from flask_cors import CORS
+
+from waitress import serve
 
 from utils.config import Config
 
@@ -25,5 +28,13 @@ app.register_blueprint(global_media)
 app.register_blueprint(misc)
 
 
+def main():
+    host = "0.0.0.0"
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "dev":
+            app.run(host=host, port=port, debug=True)
+    serve(app, host=host, port=port)
+
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=port, debug=True)
+    main()
