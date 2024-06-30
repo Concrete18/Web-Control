@@ -3,14 +3,13 @@ import time, keyboard
 
 class Utils:
 
-    def delayed_function(self, delay) -> None:
+    def wait_for_escape(self, timeout: int) -> bool:
         """
-        ph
+        Waits for a specified timeout and returns True if the escape key is not pressed, otherwise returns False.
         """
-        while delay > 0:
+        start_time = time.time()
+        while time.time() - start_time < timeout:
             if keyboard.is_pressed("esc"):
                 return False
-            increment = 0.1
-            time.sleep(increment)
-            delay -= increment
+            time.sleep(0.1)
         return True

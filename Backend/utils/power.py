@@ -14,7 +14,7 @@ class Power(Utils):
         print(f"Shutdown in {delay} seconds")
         shutdown__20_sound.play
         if sys.platform == "win32":
-            if self.delayed_function(delay=delay):
+            if self.wait_for_escape(delay=delay):
                 os.system("shutdown /s /t 1")
             else:
                 print("Cancelled Shutdown")
@@ -30,7 +30,7 @@ class Power(Utils):
         print(f"Sleeping in {delay} seconds")
         sleep_20_sound.play()
         if sys.platform == "win32":
-            if self.delayed_function(delay=delay):
+            if self.wait_for_escape(delay=delay):
                 os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
                 time.sleep(5)
             else:
