@@ -1,3 +1,13 @@
+body {
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .vertical-buttons {
   display: flex;
   flex-direction: column;
@@ -12,4 +22,11 @@
 
 .sbs-button {
   width: 6em;
+}
+
+@media only screen and (max-width: 600px) {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
