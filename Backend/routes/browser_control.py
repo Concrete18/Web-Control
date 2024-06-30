@@ -1,10 +1,10 @@
 from flask import Blueprint
 import pyautogui
 
-browser_control = Blueprint("browser_control", __name__)
+browser_control = Blueprint("browser_control", __name__, url_prefix="/api")
 
 
-@browser_control.route("/api/browser/media/<action>", methods=["POST"])
+@browser_control.route("/browser/media/<action>", methods=["POST"])
 def media(action):
     match action:
         case "play_pause":
@@ -26,7 +26,7 @@ def media(action):
     return action, 200
 
 
-@browser_control.route("/api/browser/nav/<action>", methods=["POST"])
+@browser_control.route("/browser/nav/<action>", methods=["POST"])
 def nav(action):
     match action:
         case "fullscreen":

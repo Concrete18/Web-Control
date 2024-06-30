@@ -1,65 +1,26 @@
+import {createButtonHandler} from "../../../utils"
+
 function Miscellaneous() {
-
+  
   // power
-
-  const sleep = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/power/sleep`, { method: "POST"});
-  };
-
-  const shutdown = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/power/shutdown`, { method: "POST"});
-  };
+  const POWER_ROUTE = "/api/power"
+  const sleep = createButtonHandler(`${POWER_ROUTE}sleep`);
+  const shutdown = createButtonHandler(`${POWER_ROUTE}shutdown`);
 
   // window
-
-  const prevWindow = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/window/prev`, { method: "POST"});
-  };
-  
-  const nextWindow = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/window/next`, { method: "POST"});
-  };
-
-  const refocus = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/window/refocus`, { method: "POST"});
-  };
-
-  const minimize = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/window/minimize`, { method: "POST"});
-  };
-
-  const maximize = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/window/maximize`, { method: "POST"});
-  };
+  const WINDOW_ROUTE = "/api/window"
+  const prevWindow = createButtonHandler(`${WINDOW_ROUTE}/prev`);
+  const nextWindow = createButtonHandler(`${WINDOW_ROUTE}/next`);
+  const refocus = createButtonHandler(`${WINDOW_ROUTE}/refocus`);
+  const minimize = createButtonHandler(`${WINDOW_ROUTE}/minimize`);
+  const maximize = createButtonHandler(`${WINDOW_ROUTE}/maximize`);
 
   // display
-
-  const external = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/display/external`, { method: "POST"});
-  };
-
-  const internal = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/display/internal`, { method: "POST"});
-  };
-
-  const extend = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/display/extend`, { method: "POST"});
-  };
-
-  const duplicate = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/display/duplicate`, { method: "POST"});
-  };
+  const DISPLAY_ROUTE = "/api/window"
+  const internal = createButtonHandler(`${DISPLAY_ROUTE}/internal`);
+  const extend = createButtonHandler(`${DISPLAY_ROUTE}/extend`);
+  const external = createButtonHandler(`${DISPLAY_ROUTE}/external`);
+  const duplicate = createButtonHandler(`${DISPLAY_ROUTE}/duplicate`);
   
   return (
     <>

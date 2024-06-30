@@ -3,12 +3,12 @@ import pyautogui, ctypes, subprocess
 
 from utils.power import Power
 
-misc = Blueprint("misc", __name__)
+misc = Blueprint("misc", __name__, url_prefix="/api")
 
 # window control
 
 
-@misc.route("/api/window/<action>", methods=["POST"])
+@misc.route("/window/<action>", methods=["POST"])
 def window(action):
     match action:
         case "minimize":
@@ -25,7 +25,7 @@ def window(action):
     return action, 200
 
 
-@misc.route("/api/window/refocus", methods=["POST"])
+@misc.route("/window/refocus", methods=["POST"])
 def refocus():
     # find primary screen size
     user32 = ctypes.windll.user32
@@ -38,7 +38,7 @@ def refocus():
 # display control
 
 
-@misc.route("/api/display/<action>", methods=["POST"])
+@misc.route("/display/<action>", methods=["POST"])
 def display(action):
     valid_display_modes = ["extend", "internal", "external", "duplicate"]
     if action in valid_display_modes:
@@ -52,7 +52,7 @@ def display(action):
 power = Power()
 
 
-@misc.route("/api/power/<action>", methods=["POST"])
+@misc.route("/power/<action>", methods=["POST"])
 def power_control(action):
     match action:
         case "shutdown":

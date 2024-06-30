@@ -1,61 +1,25 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faStepBackward, faStepForward, faBackward, faForward, faExpand } from '@fortawesome/free-solid-svg-icons';
+import {createButtonHandler} from "../../../utils"
 
 function BrowserControl() {
 
   // media
-
-  const playPause = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/media/play_pause`, { method: "POST"});
-  };
-
-  const nextVideo = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/media/next`, { method: "POST"});
-  };
-
-  const prevVideo = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/media/prev`, { method: "POST"});
-  };
-
-  const skipForward = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/media/skip_forwards`, { method: "POST"});
-  };
-  
-  const skipBack = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/media/skip_backwards`, { method: "POST"});
-  };
-  
-  const nextChapter = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/media/next_chapter`, { method: "POST"});
-  };
-  
-  const prevChapter = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/media/prev_chapter`, { method: "POST"});
-  };
+  const MEDIA_ROUTE = "/api/browser/media"
+  const playPause = createButtonHandler(`${MEDIA_ROUTE}/play_pause`);
+  const nextVideo = createButtonHandler(`${MEDIA_ROUTE}/next`);
+  const prevVideo = createButtonHandler(`${MEDIA_ROUTE}/prev`);
+  const skipForward = createButtonHandler(`${MEDIA_ROUTE}/skip_forwards`);
+  const skipBack = createButtonHandler(`${MEDIA_ROUTE}/skip_backwards`);
+  const nextChapter = createButtonHandler(`${MEDIA_ROUTE}/next_chapter`);
+  const prevChapter = createButtonHandler(`${MEDIA_ROUTE}/prev_chapter`);
 
   // navigation
+  const NAV_ROUTE = "/api/browser/nav"
+  const fullscreen = createButtonHandler(`${NAV_ROUTE}/fullscreen`);
+  const prevTab = createButtonHandler(`${NAV_ROUTE}/prev_tab`);
+  const nextTab = createButtonHandler(`${NAV_ROUTE}/next_tab`);
 
-  const fullscreen = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/nav/fullscreen`, { method: "POST"});
-  };
-
-  const prevTab = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/nav/prev_tab`, { method: "POST"});
-  };
-
-  const nextTab = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/browser/nav/next_tab`, { method: "POST"});
-  };
 
   return (
     <>

@@ -1,7 +1,11 @@
-export const sendCommand = async (
-  route: string,
-  e: any,
-) => {
-  e.currentTarget.blur();
-  await fetch(route, { method: "POST"});
+export const createButtonHandler = (url: string) => {
+  return async (e: any) => {
+    e.currentTarget.blur();
+    const response = await fetch(url, { method: "POST" });
+    if (!response.ok) {
+      let msg = `Command Failed!\n${url}\nCheck to be sure Backend is running properly.`
+      console.log(msg)
+      alert(msg);
+    }
+  };
 };

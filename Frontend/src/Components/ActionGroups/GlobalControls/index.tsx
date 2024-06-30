@@ -9,57 +9,21 @@ import {
   faPlus,
   faMinus,
 } from "@fortawesome/free-solid-svg-icons";
+import {createButtonHandler} from "../../../utils"
 
 function BrowserControls() {
-  const playPause = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/media/play_pause`, { method: "POST" });
-  };
 
-  const prevTrack = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/media/prev_track`, { method: "POST" });
-  };
-
-  const nextTrack = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/media/next_track`, { method: "POST" });
-  };
-
-  const openBrowser = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/media/open_browser`, { method: "POST" });
-  };
-
-  const openMusic = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/media/open_music`, { method: "POST" });
-  };
-
-  const volumeUp = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/audio/volume_up`, { method: "POST" });
-  };
-
-  const volumeDown = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/audio/volume_down`, { method: "POST" });
-  };
-
-  const volumeMute = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/audio/volume_mute`, { method: "POST" });
-  };
-
-  const setSpeakers = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/audio/audio_speakers`, { method: "POST" });
-  };
-
-  const setHeadset = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.blur();
-    await fetch(`/api/global/audio/audio_headphones`, { method: "POST" });
-  };
+  const BROWSER_ROUTE = "/api/global/media"
+  const playPause = createButtonHandler(`${BROWSER_ROUTE}/play_pause`);
+  const prevTrack = createButtonHandler(`${BROWSER_ROUTE}/prev_track`);
+  const nextTrack = createButtonHandler(`${BROWSER_ROUTE}/next_track`);
+  const openBrowser = createButtonHandler(`${BROWSER_ROUTE}/open_browser`);
+  const openMusic = createButtonHandler(`${BROWSER_ROUTE}/open_music`);
+  const volumeUp = createButtonHandler(`${BROWSER_ROUTE}/volume_up`);
+  const volumeDown = createButtonHandler(`${BROWSER_ROUTE}/volume_down`);
+  const volumeMute = createButtonHandler(`${BROWSER_ROUTE}/volume_mute`);
+  const setSpeakers = createButtonHandler(`${BROWSER_ROUTE}/audio_speakers`);
+  const setHeadset = createButtonHandler(`${BROWSER_ROUTE}/audio_headphones`);
 
   return (
     <>
