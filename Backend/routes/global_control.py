@@ -3,7 +3,7 @@ import pyautogui, os
 
 from utils.audio import SetDefaultAudio
 
-global_media = Blueprint("global_media", __name__, url_prefix="/api")
+global_control = Blueprint("global_media", __name__, url_prefix="/api")
 
 SetAudio = SetDefaultAudio()
 
@@ -12,7 +12,7 @@ increment = 10
 key_presses = int(increment / 2)  # one press increases by 2
 
 
-@global_media.route("/global/media/<action>", methods=["POST"])
+@global_control.route("/global/media/<action>", methods=["POST"])
 def media_control(action):
     match action:
         case "play_pause":
@@ -32,7 +32,7 @@ def media_control(action):
     return action, 200
 
 
-@global_media.route("/global/audio/<action>", methods=["POST"])
+@global_control.route("/global/audio/<action>", methods=["POST"])
 def audio_control(action):
     match action:
         case "volume_up":

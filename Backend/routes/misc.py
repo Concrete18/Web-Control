@@ -1,8 +1,6 @@
 from flask import Blueprint
 import pyautogui, ctypes, subprocess
 
-from utils.power import Power
-
 misc = Blueprint("misc", __name__, url_prefix="/api")
 
 # window control
@@ -45,20 +43,3 @@ def display(action):
         subprocess.run(["C:\Windows\System32\DisplaySwitch.exe", f"/{str(action)}"])
         return action, 200
     return "invalid parameter", 422
-
-
-# power control
-
-power = Power()
-
-
-@misc.route("/power/<action>", methods=["POST"])
-def power_control(action):
-    match action:
-        case "shutdown":
-            power.shutdown()
-        case "sleep":
-            power.sleep()
-        case _:
-            return "invalid parameter", 422
-    return action, 200

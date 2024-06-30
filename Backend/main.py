@@ -6,8 +6,9 @@ from waitress import serve
 
 from utils.config import Config
 
-from routes.browser_control import browser_control
-from routes.global_media import global_media
+from routes.browser import browser
+from routes.global_control import global_control
+from routes.power import power
 from routes.misc import misc
 
 app = Flask(__name__)
@@ -23,9 +24,10 @@ app.config["browser_app"] = browser_app
 
 CORS(app)  # enable CORS for all routes
 
-app.register_blueprint(browser_control)
-app.register_blueprint(global_media)
+app.register_blueprint(browser)
+app.register_blueprint(global_control)
 app.register_blueprint(misc)
+app.register_blueprint(power)
 
 
 def main():

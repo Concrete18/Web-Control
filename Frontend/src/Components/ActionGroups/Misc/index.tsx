@@ -2,11 +2,6 @@ import {createButtonHandler} from "../../../utils"
 
 function Miscellaneous() {
   
-  // power
-  const POWER_ROUTE = "/api/power"
-  const sleep = createButtonHandler(`${POWER_ROUTE}sleep`);
-  const shutdown = createButtonHandler(`${POWER_ROUTE}shutdown`);
-
   // window
   const WINDOW_ROUTE = "/api/window"
   const prevWindow = createButtonHandler(`${WINDOW_ROUTE}/prev`);
@@ -16,7 +11,7 @@ function Miscellaneous() {
   const maximize = createButtonHandler(`${WINDOW_ROUTE}/maximize`);
 
   // display
-  const DISPLAY_ROUTE = "/api/window"
+  const DISPLAY_ROUTE = "/api/display"
   const internal = createButtonHandler(`${DISPLAY_ROUTE}/internal`);
   const extend = createButtonHandler(`${DISPLAY_ROUTE}/extend`);
   const external = createButtonHandler(`${DISPLAY_ROUTE}/external`);
@@ -25,12 +20,6 @@ function Miscellaneous() {
   return (
     <>
       <div className="vertical-buttons">
-
-        <h3>Power</h3>
-
-        <button onClick={sleep}>Sleep PC</button>
-      
-        <button onClick={shutdown}>Shutdown PC</button>
 
         <h3>Window</h3>
 

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faStepBackward, faStepForward, faBackward, faForward, faExpand } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faStepBackward, faStepForward, faBackward, faForward, faVolumeOff, faVolumeMute, faPlus, faMinus, faExpand } from '@fortawesome/free-solid-svg-icons';
 import {createButtonHandler} from "../../../utils"
 
 function BrowserControl() {
@@ -20,6 +20,12 @@ function BrowserControl() {
   const prevTab = createButtonHandler(`${NAV_ROUTE}/prev_tab`);
   const nextTab = createButtonHandler(`${NAV_ROUTE}/next_tab`);
 
+  // audio
+
+  const AUDIO_ROUTE = "/api/browser/audio"
+  const volumeUp = createButtonHandler(`${AUDIO_ROUTE}/volume_up`);
+  const volumeDown = createButtonHandler(`${AUDIO_ROUTE}/volume_down`);
+  const volumeMute = createButtonHandler(`${AUDIO_ROUTE}/volume_mute`);
 
   return (
     <>
@@ -42,8 +48,8 @@ function BrowserControl() {
         </div>
         
         <div className="side-by-side">
-          <button className="sbs-button"onClick={prevChapter}>Prev Chapter</button>
-          <button className="sbs-button"onClick={nextChapter}>Next Chapter</button>
+          <button className="sbs-button"onClick={prevChapter}>Prev Chap</button>
+          <button className="sbs-button"onClick={nextChapter}>Next Chap</button>
         </div>
 
         <h3>Navigation</h3>
@@ -54,6 +60,21 @@ function BrowserControl() {
           <button className="sbs-button" onClick={prevTab}>Prev Tab</button>
           <button className="sbs-button" onClick={nextTab}>Next Tab</button>
         </div>
+
+        <h3>Audio</h3>
+
+        <div className="side-by-side">
+          <button className="sbs-button" onClick={volumeDown}>
+            <FontAwesomeIcon icon={faVolumeOff} />{" "}<FontAwesomeIcon icon={faMinus} />
+          </button>
+          <button className="sbs-button" onClick={volumeUp}>
+            <FontAwesomeIcon icon={faVolumeOff} />{" "}<FontAwesomeIcon icon={faPlus} />
+          </button>
+        </div>
+
+        <button onClick={volumeMute}>
+          <FontAwesomeIcon icon={faVolumeMute} />
+        </button>
 
       </div>
     </>

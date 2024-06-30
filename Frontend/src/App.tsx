@@ -3,6 +3,7 @@ import './App.css'
 
 import BrowserControls from './Components/ActionGroups/BrowserControls'
 import GlobalControls from './Components/ActionGroups/GlobalControls'
+import Power from './Components/ActionGroups/Power'
 import Miscellaneous from './Components/ActionGroups/Misc'
 
 import SectionTitleToggle from './Components/SectionTitleToggle'
@@ -18,20 +19,24 @@ function App() {
 
       <ShowHideButtons setGlobalVisibility={setGlobalVisibility} globalVisibility={globalVisibility}/>
 
-      <div className="button_container">
+      <div className="button-container">
 
-        <SectionTitleToggle title="Browser Controls" globalVisibility={globalVisibility}>
+        <SectionTitleToggle title="Browser" globalVisibility={globalVisibility}>
           <BrowserControls/>
         </SectionTitleToggle>
 
-        <SectionTitleToggle title="Global Controls" globalVisibility={globalVisibility}>
+        <SectionTitleToggle title="Global" globalVisibility={globalVisibility}>
           <GlobalControls />
         </SectionTitleToggle>
 
-        <SectionTitleToggle title="Miscellaneous" globalVisibility={globalVisibility}>
+        <SectionTitleToggle title="Misc" globalVisibility={globalVisibility}>
           <Miscellaneous/>
         </SectionTitleToggle>
           
+        <SectionTitleToggle title="Power" globalVisibility={globalVisibility}>
+          <Power />
+        </SectionTitleToggle>
+        
       </div>
     </>
   )

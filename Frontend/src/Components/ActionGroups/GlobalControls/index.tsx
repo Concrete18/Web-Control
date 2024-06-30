@@ -13,17 +13,21 @@ import {createButtonHandler} from "../../../utils"
 
 function BrowserControls() {
 
-  const BROWSER_ROUTE = "/api/global/media"
-  const playPause = createButtonHandler(`${BROWSER_ROUTE}/play_pause`);
-  const prevTrack = createButtonHandler(`${BROWSER_ROUTE}/prev_track`);
-  const nextTrack = createButtonHandler(`${BROWSER_ROUTE}/next_track`);
-  const openBrowser = createButtonHandler(`${BROWSER_ROUTE}/open_browser`);
-  const openMusic = createButtonHandler(`${BROWSER_ROUTE}/open_music`);
-  const volumeUp = createButtonHandler(`${BROWSER_ROUTE}/volume_up`);
-  const volumeDown = createButtonHandler(`${BROWSER_ROUTE}/volume_down`);
-  const volumeMute = createButtonHandler(`${BROWSER_ROUTE}/volume_mute`);
-  const setSpeakers = createButtonHandler(`${BROWSER_ROUTE}/audio_speakers`);
-  const setHeadset = createButtonHandler(`${BROWSER_ROUTE}/audio_headphones`);
+  const MEDIA_ROUTE = "/api/global/media"
+  const playPause = createButtonHandler(`${MEDIA_ROUTE}/play_pause`);
+  const prevTrack = createButtonHandler(`${MEDIA_ROUTE}/prev_track`);
+  const nextTrack = createButtonHandler(`${MEDIA_ROUTE}/next_track`);
+  const openBrowser = createButtonHandler(`${MEDIA_ROUTE}/open_browser`);
+  const openMusic = createButtonHandler(`${MEDIA_ROUTE}/open_music`);
+
+  const AUDIO_ROUTE = "/api/global/audio"
+
+  // TODO add backend routes
+  const volumeUp = createButtonHandler(`${AUDIO_ROUTE}/volume_up`);
+  const volumeDown = createButtonHandler(`${AUDIO_ROUTE}/volume_down`);
+  const volumeMute = createButtonHandler(`${AUDIO_ROUTE}/volume_mute`);
+  const setSpeakers = createButtonHandler(`${AUDIO_ROUTE}/audio_speakers`);
+  const setHeadset = createButtonHandler(`${AUDIO_ROUTE}/audio_headphones`);
 
   return (
     <>
