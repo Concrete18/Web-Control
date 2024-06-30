@@ -28,54 +28,32 @@ function Miscellaneous() {
 
         <h3>Power</h3>
 
-        <button onClick={sleep}>
-          Sleep PC
-        </button>
+        <button onClick={sleep}>Sleep PC</button>
       
-        <button onClick={shutdown}>
-          Shutdown PC
-        </button>
+        <button onClick={shutdown}>Shutdown PC</button>
 
         <h3>Window</h3>
 
-        <button onClick={minimize}>
-          Minimize
-        </button>
+        <button onClick={minimize}>Minimize</button>
 
-        <button onClick={maximize}>
-          Maximize
-        </button>
+        <button onClick={maximize}>Maximize</button>
 
         <div className="side-by-side">
-          <button className="sbs-button" onClick={prevWindow}>
-            Prev
-          </button>
-          <button className="sbs-button" onClick={nextWindow}>
-            Next
-          </button>
+          <button className="sbs-button" onClick={prevWindow}>Prev</button>
+          <button className="sbs-button" onClick={nextWindow}>Next</button>
         </div>
 
-        <button onClick={refocus}>
-          Refocus
-        </button>
+        <button onClick={refocus}>Refocus</button>
 
         <h3>Display</h3>
 
-        <button onClick={internal}>
-          PC Screen Only
-        </button>
+        <button onClick={internal}>PC Screen Only</button>
 
-        <button onClick={external}>
-          Second Screen Only
-        </button>
+        <button onClick={external}>Second Screen Only</button>
 
-        <button onClick={extend}>
-          Extend
-        </button>
+        <button onClick={extend}>Extend</button>
 
-        <button onClick={duplicate}>
-          Duplicate
-        </button>
+        <button onClick={duplicate}>Duplicate</button>
 
       </div>
     </>

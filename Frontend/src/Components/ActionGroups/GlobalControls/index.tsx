@@ -32,17 +32,12 @@ function BrowserControls() {
         <h3>Media</h3>
 
         <button onClick={playPause}>
-          <FontAwesomeIcon icon={faPlay} />{" / "}
-          <FontAwesomeIcon icon={faPause} />
+          <FontAwesomeIcon icon={faPlay} />{" / "}<FontAwesomeIcon icon={faPause} />
         </button>
 
         <div className="side-by-side">
-          <button className="sbs-button" onClick={prevTrack}>
-            <FontAwesomeIcon icon={faStepBackward} />
-          </button>
-          <button className="sbs-button" onClick={nextTrack}>
-            <FontAwesomeIcon icon={faStepForward} />
-          </button>
+          <button className="sbs-button" onClick={prevTrack}><FontAwesomeIcon icon={faStepBackward} /></button>
+          <button className="sbs-button" onClick={nextTrack}><FontAwesomeIcon icon={faStepForward} /></button>
         </div>
 
         <button onClick={openBrowser}>Open Browser</button>
@@ -53,12 +48,10 @@ function BrowserControls() {
 
         <div className="side-by-side">
           <button className="sbs-button" onClick={volumeDown}>
-            <FontAwesomeIcon icon={faVolumeOff} />{" "}
-            <FontAwesomeIcon icon={faMinus} />
+            <FontAwesomeIcon icon={faVolumeOff} />{" "}<FontAwesomeIcon icon={faMinus} />
           </button>
           <button className="sbs-button" onClick={volumeUp}>
-            <FontAwesomeIcon icon={faVolumeOff} />{" "}
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon icon={faVolumeOff} />{" "}<FontAwesomeIcon icon={faPlus} />
           </button>
         </div>
 
@@ -67,12 +60,8 @@ function BrowserControls() {
         </button>
 
         <div className="side-by-side">
-          <button className="sbs-button" onClick={setSpeakers}>
-            Speakers
-          </button>
-          <button className="sbs-button" onClick={setHeadset}>
-            Headset
-          </button>
+          <button className="sbs-button" onClick={setSpeakers}>Speakers</button>
+          <button className="sbs-button" onClick={setHeadset}>Headset</button>
         </div>
 
       </div>

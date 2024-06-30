@@ -32,45 +32,27 @@ function BrowserControl() {
         </button>
 
         <div className="side-by-side">
-          <button className="sbs-button" onClick={prevVideo}>
-            <FontAwesomeIcon icon={faStepBackward} />
-          </button>
-          <button className="sbs-button" onClick={nextVideo}>
-            <FontAwesomeIcon icon={faStepForward} />
-          </button>
+          <button className="sbs-button" onClick={prevVideo}><FontAwesomeIcon icon={faStepBackward} /></button>
+          <button className="sbs-button" onClick={nextVideo}><FontAwesomeIcon icon={faStepForward} /></button>
         </div>
 
         <div className="side-by-side">
-          <button className="sbs-button"onClick={skipBack}>
-            <FontAwesomeIcon icon={faBackward} />
-          </button>
-          <button className="sbs-button"onClick={skipForward}>
-            <FontAwesomeIcon icon={faForward} />
-          </button>
+          <button className="sbs-button"onClick={skipBack}><FontAwesomeIcon icon={faBackward} /></button>
+          <button className="sbs-button"onClick={skipForward}><FontAwesomeIcon icon={faForward} /></button>
         </div>
         
         <div className="side-by-side">
-          <button className="sbs-button"onClick={prevChapter}>
-            Prev Chapter
-          </button>
-          <button className="sbs-button"onClick={nextChapter}>
-            Next Chapter
-          </button>
+          <button className="sbs-button"onClick={prevChapter}>Prev Chapter</button>
+          <button className="sbs-button"onClick={nextChapter}>Next Chapter</button>
         </div>
 
         <h3>Navigation</h3>
 
-        <button onClick={fullscreen}>
-          <FontAwesomeIcon icon={faExpand} />
-        </button>
+        <button onClick={fullscreen}><FontAwesomeIcon icon={faExpand} /></button>
     
         <div className="side-by-side">
-          <button className="sbs-button" onClick={prevTab}>
-            Prev Tab
-          </button>
-          <button className="sbs-button" onClick={nextTab}>
-            Next Tab
-          </button>
+          <button className="sbs-button" onClick={prevTab}>Prev Tab</button>
+          <button className="sbs-button" onClick={nextTab}>Next Tab</button>
         </div>
 
       </div>
