@@ -11,6 +11,8 @@
 }
 
 body {
+  transform: scale(1.4);
+  transform-origin: top center;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -52,10 +54,15 @@ button:hover {
 }
 
 disabled {
-  background-color: #62abff;
+  background-color: #62abff; 
 }
 
 @media only screen and (max-width: 600px) {
+
+  body {
+    transform: scale(1.2);
+  }
+
   h1 {
     font-size: 32px;
   }
