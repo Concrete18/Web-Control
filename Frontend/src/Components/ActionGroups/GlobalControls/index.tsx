@@ -21,8 +21,6 @@ function BrowserControls() {
   const openMusic = createButtonHandler(`${MEDIA_ROUTE}/open_music`);
 
   const AUDIO_ROUTE = "/api/global/audio"
-
-  // TODO add backend routes
   const volumeUp = createButtonHandler(`${AUDIO_ROUTE}/volume_up`);
   const volumeDown = createButtonHandler(`${AUDIO_ROUTE}/volume_down`);
   const volumeMute = createButtonHandler(`${AUDIO_ROUTE}/volume_mute`);

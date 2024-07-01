@@ -21,7 +21,6 @@ function BrowserControl() {
   const nextTab = createButtonHandler(`${NAV_ROUTE}/next_tab`);
 
   // audio
-
   const AUDIO_ROUTE = "/api/browser/audio"
   const volumeUp = createButtonHandler(`${AUDIO_ROUTE}/volume_up`);
   const volumeDown = createButtonHandler(`${AUDIO_ROUTE}/volume_down`);
