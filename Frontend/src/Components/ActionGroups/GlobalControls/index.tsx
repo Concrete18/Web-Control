@@ -26,8 +26,8 @@ function BrowserControls() {
   const volumeUp = createButtonHandler(`${AUDIO_ROUTE}/volume_up`);
   const volumeDown = createButtonHandler(`${AUDIO_ROUTE}/volume_down`);
   const volumeMute = createButtonHandler(`${AUDIO_ROUTE}/volume_mute`);
-  const setSpeakers = createButtonHandler(`${AUDIO_ROUTE}/audio_speakers`);
-  const setHeadset = createButtonHandler(`${AUDIO_ROUTE}/audio_headphones`);
+  const setSpeakers = createButtonHandler(`${AUDIO_ROUTE}/speakers`);
+  const setHeadset = createButtonHandler(`${AUDIO_ROUTE}/headphones`);
 
   return (
     <>
@@ -48,7 +48,7 @@ function BrowserControls() {
 
         <button onClick={openMusic}>Open Music</button>
 
-        <h3>Audio</h3>
+        <h3>Global Audio</h3>
 
         <div className="side-by-side">
           <button className="sbs-button" onClick={volumeDown}>

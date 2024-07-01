@@ -4,7 +4,7 @@ import './App.css'
 import BrowserControls from './Components/ActionGroups/BrowserControls'
 import GlobalControls from './Components/ActionGroups/GlobalControls'
 import Power from './Components/ActionGroups/Power'
-import Miscellaneous from './Components/ActionGroups/Misc'
+import Miscellaneous from './Components/ActionGroups/Window'
 
 import SectionTitleToggle from './Components/SectionTitleToggle'
 import ShowHideButtons from './Components/ShowHideAll'

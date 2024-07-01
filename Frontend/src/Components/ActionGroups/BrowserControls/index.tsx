@@ -31,16 +31,11 @@ function BrowserControl() {
     <>
       <div className="vertical-buttons">
 
-        <h3>Media</h3>
+        <h3>Video Player</h3>
 
         <button onClick={playPause}>
           <FontAwesomeIcon icon={faPlay} /> / <FontAwesomeIcon icon={faPause} />
         </button>
-
-        <div className="side-by-side">
-          <button className="sbs-button" onClick={prevVideo}><FontAwesomeIcon icon={faStepBackward} /></button>
-          <button className="sbs-button" onClick={nextVideo}><FontAwesomeIcon icon={faStepForward} /></button>
-        </div>
 
         <div className="side-by-side">
           <button className="sbs-button"onClick={skipBack}><FontAwesomeIcon icon={faBackward} /></button>
@@ -52,6 +47,11 @@ function BrowserControl() {
           <button className="sbs-button"onClick={nextChapter}>Next Chap</button>
         </div>
 
+        <div className="side-by-side">
+          <button className="sbs-button" onClick={prevVideo}><FontAwesomeIcon icon={faStepBackward} /></button>
+          <button className="sbs-button" onClick={nextVideo}><FontAwesomeIcon icon={faStepForward} /></button>
+        </div>
+
         <h3>Navigation</h3>
 
         <button onClick={fullscreen}><FontAwesomeIcon icon={faExpand} /></button>
@@ -61,7 +61,7 @@ function BrowserControl() {
           <button className="sbs-button" onClick={nextTab}>Next Tab</button>
         </div>
 
-        <h3>Audio</h3>
+        <h3>Video Audio</h3>
 
         <div className="side-by-side">
           <button className="sbs-button" onClick={volumeDown}>
@@ -72,9 +72,7 @@ function BrowserControl() {
           </button>
         </div>
 
-        <button onClick={volumeMute}>
-          <FontAwesomeIcon icon={faVolumeMute} />
-        </button>
+        <button onClick={volumeMute}><FontAwesomeIcon icon={faVolumeMute} /></button>
 
       </div>
     </>

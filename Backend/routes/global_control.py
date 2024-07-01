@@ -41,9 +41,9 @@ def audio_control(action):
             pyautogui.press("volumedown", presses=key_presses)
         case "volume_mute":
             pyautogui.press("volumemute")
-        case "audio_speakers":
+        case "speakers":
             SetAudio.to_speakers()
-        case "audio_headphones":
+        case "headphones":
             SetAudio.to_headset()
         case _:
             return "invalid  parameter", 422

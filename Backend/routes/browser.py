@@ -41,7 +41,7 @@ def nav(action):
 
 
 @browser.route("/browser/audio/<action>", methods=["POST"])
-def nav(action):
+def audio(action):
     match action:
         case "volume_up":
             pyautogui.press("up")

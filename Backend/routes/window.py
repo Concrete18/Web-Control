@@ -1,13 +1,13 @@
 from flask import Blueprint
 import pyautogui, ctypes, subprocess
 
-misc = Blueprint("misc", __name__, url_prefix="/api")
+window = Blueprint("window", __name__, url_prefix="/api")
 
 # window control
 
 
-@misc.route("/window/<action>", methods=["POST"])
-def window(action):
+@window.route("/window/<action>", methods=["POST"])
+def window_control(action):
     match action:
         case "minimize":
             pyautogui.hotkey("alt", "space")
@@ -23,7 +23,7 @@ def window(action):
     return action, 200
 
 
-@misc.route("/window/refocus", methods=["POST"])
+@window.route("/window/refocus", methods=["POST"])
 def refocus():
     # find primary screen size
     user32 = ctypes.windll.user32
@@ -36,7 +36,7 @@ def refocus():
 # display control
 
 
-@misc.route("/display/<action>", methods=["POST"])
+@window.route("/display/<action>", methods=["POST"])
 def display(action):
     valid_display_modes = ["extend", "internal", "external", "duplicate"]
     if action in valid_display_modes:

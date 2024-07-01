@@ -12,6 +12,7 @@ class SetDefaultAudio:
     def __init__(self) -> None:
         pass
 
+    @staticmethod
     def set_default_sound_device(device, num):
         command = ["nircmd", "setdefaultsounddevice", device, str(num)]
         subprocess.run(command, shell=True)

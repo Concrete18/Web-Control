@@ -1,6 +1,6 @@
 import {createButtonHandler} from "../../../utils"
 
-function Miscellaneous() {
+function Window() {
   
   // window
   const WINDOW_ROUTE = "/api/window"
@@ -49,4 +49,4 @@ function Miscellaneous() {
   );
 }
 
-export default Miscellaneous;
+export default Window;
