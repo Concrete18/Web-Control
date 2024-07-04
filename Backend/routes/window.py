@@ -10,8 +10,10 @@ window = Blueprint("window", __name__, url_prefix="/api")
 def window_control(action):
     match action:
         case "minimize":
-            pyautogui.hotkey("alt", "space")
-            pyautogui.press("n")
+            # avoids the other method that uses the space
+            # key which can start act as play/pause
+            pyautogui.hotkey("win", "down")
+            pyautogui.hotkey("win", "down")
         case "maximize":
             pyautogui.hotkey("win", "up")
         case "next":
