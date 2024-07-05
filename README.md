@@ -20,6 +20,8 @@ I was unable to make that version with React which greatly limited the projects 
 ## Features
 
 - Browser Controls such as video playback control tab switching
+- Display Switching (PC Screen Only, Second Screen Only, Extend and Duplicate)
+- Sleep and Shutdown with 20 second window to cancel
 - Global Media Controls
 - Grouped control sections
 
