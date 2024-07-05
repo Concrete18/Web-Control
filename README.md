@@ -1,8 +1,18 @@
 # Web Control
 
-<img src="https://raw.githubusercontent.com/Concrete18/Web-Control/main/images/Phone_Preview.png" alt="Phone View Preview" width="300"/>
- 
-## Goal
+Typscript and React frontend with Python and Flask backend local only web server that allows control of PC it runs on.
+
+## Previews
+
+### Desktop
+
+<img src="https://raw.githubusercontent.com/Concrete18/Web-Control/main/images/desktop_view.png" alt="Desktop View Preview" width="1000"/>
+
+### Phone
+
+<img src="https://raw.githubusercontent.com/Concrete18/Web-Control/main/images/phone_view.png" alt="Phone View Preview" width="300"/>
+
+## Goals
 
 I created this to replace my previous FastAPI only version from my original repo and to practice React and Flask.
 I was unable to make that version with React which greatly limited the projects capability.
