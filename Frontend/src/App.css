@@ -3,6 +3,11 @@ body {
   overflow-x:hidden;
 }
 
+.title {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
 .button-container {
   display: flex;
   flex-direction: row;
@@ -21,6 +26,10 @@ body {
 }
 
 .sbs-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 6em;
 }
 

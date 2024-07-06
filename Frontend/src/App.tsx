@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <h1>Web Control</h1>
+      <h1 className="title">Web Control</h1>
 
       <ShowHideButtons setGlobalVisibility={setGlobalVisibility} globalVisibility={globalVisibility}/>
 
