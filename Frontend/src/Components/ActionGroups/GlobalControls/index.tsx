@@ -62,7 +62,7 @@ function BrowserControls() {
         </button>
 
         <div className="side-by-side">
-          <button className="sbs-button" onClick={setSpeakers}>Speakers</button>
+          <button className="sbs-button" onClick={setSpeakers}>Speaker</button>
           <button className="sbs-button" onClick={setHeadset}>Headset</button>
         </div>
 
