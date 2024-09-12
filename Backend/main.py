@@ -1,15 +1,19 @@
+# standard library
 import sys
+
+# third-party library
 from flask import Flask
 from flask_cors import CORS
-
 from waitress import serve
 
-from utils.config import Config
-
+# local imports
 from routes.browser import browser
 from routes.global_control import global_control
 from routes.power import power
 from routes.window import window
+
+from utils.config import Config
+from utils.utils import set_title
 
 app = Flask(__name__)
 
@@ -31,6 +35,7 @@ app.register_blueprint(power)
 
 
 def main():
+    set_title("Web Control")
     host = "0.0.0.0"
     if len(sys.argv) > 1:
         if sys.argv[1] == "dev":

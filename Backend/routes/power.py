@@ -1,12 +1,10 @@
 from flask import Blueprint
 import os, sys, time
 
-from utils.utils import Utils
+from utils.utils import wait_for_escape
 from audio.play_sound import sleep_20_sound, shutdown__20_sound, cancel_sound
 
 power = Blueprint("power", __name__, url_prefix="/api")
-
-utils = Utils()
 
 
 def shutdown() -> None:
@@ -17,7 +15,7 @@ def shutdown() -> None:
     print(f"Shutdown in {timeout} seconds")
     shutdown__20_sound.play
     if sys.platform == "win32":
-        if utils.wait_for_escape(timeout):
+        if wait_for_escape(timeout):
             os.system("shutdown /s /t 1")
         else:
             print("Cancelled Shutdown")
@@ -34,7 +32,7 @@ def sleep() -> None:
     print(f"Sleeping in {timeout} seconds")
     sleep_20_sound.play()
     if sys.platform == "win32":
-        if utils.wait_for_escape(timeout):
+        if wait_for_escape(timeout):
             os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
             time.sleep(5)
         else:
