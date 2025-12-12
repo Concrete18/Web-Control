@@ -37,9 +37,11 @@ app.register_blueprint(power)
 def main():
     set_title("Web Control")
     host = "0.0.0.0"
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "dev":
-            app.run(host=host, port=port, debug=True)
+
+    if len(sys.argv) > 1 and sys.argv[1] == "dev":
+        app.run(host=host, port=port, debug=True)
+        return
+
     serve(app, host=host, port=port)
 
 
