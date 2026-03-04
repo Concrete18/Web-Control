@@ -1,6 +1,6 @@
 PyAutoGUI==0.9.53
-Flask==3.0.3
-Flask-Cors==6.0.0
+Flask
+Flask-Cors
 keyboard==0.13.5
 pygame==2.5.2
-waitress==3.0.1
+waitress
