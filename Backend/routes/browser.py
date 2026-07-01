@@ -8,7 +8,7 @@ browser = Blueprint("browser_control", __name__, url_prefix="/api")
 def media(action):
     match action:
         case "play_pause":
-            pyautogui.press("space")
+            pyautogui.press("playpause")
         case "next":
             pyautogui.hotkey("shift", "n")
         case "prev":
